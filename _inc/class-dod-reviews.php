@@ -89,7 +89,7 @@ class DoDReviews {
           'public'        => true,
           'hierarchical'  => false,
           'menu_position' => 5,
-          'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'),
+          'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions'),
           'has_archive'   => true,
           'show_ui'       => true,
           'show_in_menu'  => true,
@@ -98,6 +98,13 @@ class DoDReviews {
           'show_in_nav_menus' => false
         );
 
+        public $post_meta = array(
+          array('name' => 'author', 'label'=>'Author (username)'),
+          array('name' => 'date', 'label' => 'Date'),
+          array('name' => 'doctor_name', 'label' => 'Doctor\'s name'),
+          array('name' => 'doctor_page', 'label' => 'Doctor\'s Page'),
+          array('name' => 'stars', 'label' => 'Stars'),
+        );
         /**
          * Define the core functionality of the plugin.
          *
@@ -194,6 +201,7 @@ class DoDReviews {
                 $plugin_admin = new DoDReviewsAdmin( $this->get_plugin_name(), $this->get_version() );
                 $plugin_admin->post_type = $this->post_type;
                 $plugin_admin->post_type_args = $this->post_type_args;
+                $plugin_admin->post_meta = $this->post_meta;
 
                 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
                 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -202,8 +210,8 @@ class DoDReviews {
                 // http://www.wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
                 // http://www.smashingmagazine.com/2012/11/08/complete-guide-custom-post-types/
                 $this->loader->add_action( 'init', $plugin_admin, 'register_post_type' );
-                $this->loader->add_action( 'add_meta_boxes', array( $plugin_admin, 'add_meta_box' ) );
-                $this->loader->add_action( 'save_post', array( $plugin_admin, 'save_callback' ) );
+                $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_box' );
+                $this->loader->add_action( 'save_post', $plugin_admin, 'save_callback' );
         }
 
         /**

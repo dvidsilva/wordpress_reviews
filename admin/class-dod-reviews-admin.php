@@ -115,8 +115,39 @@ class DoDReviewsAdmin {
          *
          * @since    1.0.0
          */
-        public function add_meta_box () {
+        public function add_meta_box ($post_type) {
+          if ($post_type==$this->post_type) {
+            add_meta_box(
+              'dod_revies_meta'
+              ,'Review information'
+              ,array( $this, 'render_meta_box_content' )
+              ,$post_type
+              ,'advanced'
+              ,'high'
+            );
+          }
+        }
 
+        /**
+         * Render Meta Box content.
+         *
+         * @param WP_Post $post The post object.
+         */
+        public function render_meta_box_content( $post ) {
+          // Add an nonce field so we can check for it later.
+          wp_nonce_field( 'myplugin_inner_custom_box', 'myplugin_inner_custom_box_nonce' );
+          // Use get_post_meta to retrieve an existing value from the database.
+          foreach ($this->post_meta as $meta ) {
+            $value = get_post_meta( $post->ID, $meta['name'], true );
+            // Display the form, using the current value.
+            echo '<div>';
+            echo '<label for="myplugin_new_field">';
+            echo $meta['label'];
+            echo '</label> ';
+            echo '<input type="text" id="'.$meta['name'].'" name="'.$meta['name'].'"';
+            echo ' value="' . esc_attr( $value ) . '" size="25" />';
+            echo '</div>';
+          }
         }
 
         /**
@@ -124,8 +155,46 @@ class DoDReviewsAdmin {
          *
          * @since    1.0.0
          */
-        public function save_callback () {
+        public function save_callback ($post_id) {
+          /*
+           * We need to verify this came from the our screen and with proper authorization,
+           * because save_post can be triggered at other times.
+           */
 
+          // Check if our nonce is set.
+          if ( ! isset( $_POST['myplugin_inner_custom_box_nonce'] ) )
+            return $post_id;
+
+          $nonce = $_POST['myplugin_inner_custom_box_nonce'];
+
+          // Verify that the nonce is valid.
+          if ( ! wp_verify_nonce( $nonce, 'myplugin_inner_custom_box' ) )
+            return $post_id;
+
+          // If this is an autosave, our form has not been submitted,
+          //     so we don't want to do anything.
+          if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+            return $post_id;
+
+          // Check the user's permissions.
+          if ( 'page' == $_POST['post_type'] ) {
+
+            if ( ! current_user_can( 'edit_page', $post_id ) )
+              return $post_id;
+
+          } else {
+
+            if ( ! current_user_can( 'edit_post', $post_id ) )
+              return $post_id;
+          }
+
+          /* OK, its safe for us to save the data now. */
+          foreach ($this->post_meta as $meta ) {
+            // Sanitize the user input.
+            $val = sanitize_text_field( $_POST[$meta['name']] );
+            // Update the meta field.
+            update_post_meta( $post_id, $meta['name'], $val );
+          }
         }
 
 }
