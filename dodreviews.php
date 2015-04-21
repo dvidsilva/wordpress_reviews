@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function activate_dod_reviews() {
         require_once plugin_dir_path( __FILE__ ) . '_inc/class-dod-reviews-activator.php';
-        DoDReviewssActivator::activate();
+        DoDReviewsActivator::activate();
 }
 
 /**
