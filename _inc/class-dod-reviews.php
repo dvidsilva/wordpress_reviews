@@ -209,6 +209,7 @@ class DoDReviews {
                 // https://codex.wordpress.org/Function_Reference/register_post_type
                 // http://www.wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
                 // http://www.smashingmagazine.com/2012/11/08/complete-guide-custom-post-types/
+                // http://codex.wordpress.org/Function_Reference/add_meta_box
                 $this->loader->add_action( 'init', $plugin_admin, 'register_post_type' );
                 $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_box' );
                 $this->loader->add_action( 'save_post', $plugin_admin, 'save_callback' );
