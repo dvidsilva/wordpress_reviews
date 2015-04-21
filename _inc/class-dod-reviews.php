@@ -202,6 +202,8 @@ class DoDReviews {
                 // http://www.wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
                 // http://www.smashingmagazine.com/2012/11/08/complete-guide-custom-post-types/
                 $this->loader->add_action( 'init', $plugin_admin, 'register_post_type' );
+                $this->loader->add_action( 'add_meta_boxes', array( $plugin_admin, 'add_meta_box' ) );
+                $this->loader->add_action( 'save_post', array( $plugin_admin, 'save_callback' ) );
         }
 
         /**

@@ -110,4 +110,22 @@ class DoDReviewsAdmin {
           register_post_type($this->post_type, $this->post_type_args);
         }
 
+        /**
+         * add the meta boxes to the review create page
+         *
+         * @since    1.0.0
+         */
+        public function add_meta_box () {
+
+        }
+
+        /**
+         * saves the custom fields for the post
+         *
+         * @since    1.0.0
+         */
+        public function save_callback () {
+
+        }
+
 }
