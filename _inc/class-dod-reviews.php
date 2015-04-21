@@ -58,6 +58,46 @@ class DoDReviews {
         protected $version;
 
         /**
+         * The name of the post type that will be used in admin.
+         *
+         * @since    1.0.0
+         */
+        public $post_type = "dodreview";
+
+        /**
+         * The options used to create the new taxonomy
+         *
+         * @since    1.0.0
+         */
+        public $post_type_args = array(
+          'labels'        => array(
+            'name'               => 'DoD reviews',
+            'singular_name'      => 'DoD Review',
+            'edit_item'          => 'Edit Review',
+            'new_item'           => 'New Review',
+            'add_new_item'       => 'Add New DoD Review',
+            'all_items'          => 'All Reviews',
+            'view_item'          => 'View Review',
+            'search_items'       => 'Search Reviews',
+            'not_found'          => 'No Reviews found',
+            'not_found_in_trash' => 'No Reviews found in the Trash', 
+            'parent_item_colon'  => '',
+            'menu_name'          => 'DoD Reviews'
+          ),
+          'label'         => 'DoD Review',
+          'description'   => 'Reviews from our customer for the homepage.',
+          'public'        => true,
+          'hierarchical'  => false,
+          'menu_position' => null,
+          'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'),
+          'has_archive'   => true,
+          'show_ui'       => true,
+          'show_in_menu'  => true,
+          'capability_type'   => 'post',
+          'show_in_nav_menus' => false
+        );
+
+        /**
          * Define the core functionality of the plugin.
          *
          * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -151,10 +191,12 @@ class DoDReviews {
         private function define_admin_hooks() {
 
                 $plugin_admin = new DoDReviewsAdmin( $this->get_plugin_name(), $this->get_version() );
+                $plugin_admin->post_type = $this->post_type;
+                $plugin_admin->post_type_args = $this->post_type_args;
 
                 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
                 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
+                $this->loader->add_action( 'admin_init', $plugin_admin, 'register_post_type' );
         }
 
         /**

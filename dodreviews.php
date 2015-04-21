@@ -71,3 +71,8 @@ function run_dod_reviews() {
 run_dod_reviews();
 
 
+
+// for the extra custom fields look at https://wordpress.org/plugins/advanced-custom-fields/
+// http://blog.teamtreehouse.com/adding-custom-fields-to-a-custom-post-type-the-right-way
+// or look at modifying the new post page
+// http://code.tutsplus.com/tutorials/creating-custom-fields-for-attachments-in-wordpress--net-13076

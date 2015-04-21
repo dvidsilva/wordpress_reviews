@@ -100,4 +100,14 @@ class DoDReviewsAdmin {
 
         }
 
+
+        /**
+         * Register posts type so they can create them in the admin panel
+         *
+         * @since    1.0.0
+         */
+        public function register_post_type () {
+          register_post_type($this->post_type, $this->post_type_args);
+        }
+
 }
