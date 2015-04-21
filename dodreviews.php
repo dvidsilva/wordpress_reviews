@@ -25,25 +25,25 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+        die;
 }
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in _inc/class-plugin-name-activator.php
  */
-function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . '_inc/class-dod-reviews-activator.php';
-	Plugin_Name_Activator::activate();
+function activate_dod_reviews() {
+        require_once plugin_dir_path( __FILE__ ) . '_inc/class-dod-reviews-activator.php';
+        DoDReviewssActivator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in _inc/class-plugin-name-deactivator.php
  */
-function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . '_inc/class-dod-reviews-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+function deactivate_dod_reviews() {
+        require_once plugin_dir_path( __FILE__ ) . '_inc/class-dod-reviews-deactivator.php';
+        DoDReviewsDeactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_dod_reviews' );
@@ -65,8 +65,8 @@ require plugin_dir_path( __FILE__ ) . '_inc/class-dod-reviews.php';
  * @since    1.0.0
  */
 function run_dod_reviews() {
-	$plugin = new DoDReviews();
-	$plugin->run();
+        $plugin = new DoDReviews();
+        $plugin->run();
 }
 run_dod_reviews();
 
