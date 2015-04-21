@@ -84,15 +84,16 @@ class DoDReviews {
             'parent_item_colon'  => '',
             'menu_name'          => 'DoD Reviews'
           ),
-          'label'         => 'DoD Review',
+          'label'         => 'Review',
           'description'   => 'Reviews from our customer for the homepage.',
           'public'        => true,
           'hierarchical'  => false,
-          'menu_position' => null,
+          'menu_position' => 5,
           'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'),
           'has_archive'   => true,
           'show_ui'       => true,
           'show_in_menu'  => true,
+          'show_in_nav_menus' => true,
           'capability_type'   => 'post',
           'show_in_nav_menus' => false
         );
@@ -196,7 +197,11 @@ class DoDReviews {
 
                 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
                 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-                $this->loader->add_action( 'admin_init', $plugin_admin, 'register_post_type' );
+
+                // https://codex.wordpress.org/Function_Reference/register_post_type
+                // http://www.wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
+                // http://www.smashingmagazine.com/2012/11/08/complete-guide-custom-post-types/
+                $this->loader->add_action( 'init', $plugin_admin, 'register_post_type' );
         }
 
         /**
