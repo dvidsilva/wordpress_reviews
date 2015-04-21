@@ -137,17 +137,20 @@ class DoDReviewsAdmin {
           // Add an nonce field so we can check for it later.
           wp_nonce_field( 'myplugin_inner_custom_box', 'myplugin_inner_custom_box_nonce' );
           // Use get_post_meta to retrieve an existing value from the database.
+          echo '<table>';
+          echo '<thead><tr><th class="left">Name</th><th>Value</th></tr></thead>';
           foreach ($this->post_meta as $meta ) {
             $value = get_post_meta( $post->ID, $meta['name'], true );
             // Display the form, using the current value.
-            echo '<div>';
-            echo '<label for="myplugin_new_field">';
+            echo '<tr>';
+            echo '<td class="left"><label for="myplugin_new_field">';
             echo $meta['label'];
-            echo '</label> ';
-            echo '<input type="text" id="'.$meta['name'].'" name="'.$meta['name'].'"';
-            echo ' value="' . esc_attr( $value ) . '" size="25" />';
-            echo '</div>';
+            echo '</label></td>';
+            echo '<td><input type="text" id="'.$meta['name'].'" name="'.$meta['name'].'"';
+            echo ' value="' . esc_attr( $value ) . '" size="25" /></td>';
+            echo '</tr>';
           }
+          echo '</table>';
         }
 
         /**
