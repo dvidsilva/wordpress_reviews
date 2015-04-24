@@ -99,5 +99,19 @@ class DoDReviewsPublic {
                 wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
 
         }
+  
+  
+        /**
+         * Return the reviews in their template with all the styles and JS.
+         *
+         * @since    1.0.0
+         */
+        public function display_reviews ($atts) {
+          ob_start();
+          include(__DIR__.'/index.php');
+          $content = ob_get_contents();
+          ob_end_clean();
+          return $content;
+        }
 
 }
