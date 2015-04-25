@@ -15,16 +15,18 @@
 	'post_status'      => 'publish',
 	'suppress_filters' => true 
 );
-// $reviews_array = get_posts( $args );
-print_r($reviews_array);
+ $reviews_array = get_posts( $args );
+//print_r($reviews_array);
 ?>
 
 <!-- main container -->
 <div id="dodreviews">
   <h1>Hear From Our Patients</h1>
   <div class="dodrslider">
+  <div class="dodrarrow dodrleftarrow" data-dir="left"></div>
+  <div class="dodrarrow dodrrighttarrow" data-dir="right"></div>
   <?php
-  foreach ($reviews_array as $review) {
+  foreach ($reviews_array as $k => $review) {
    ?>
     <!-- slide begin -->
     <div class="dodrslide">
@@ -40,8 +42,8 @@ print_r($reviews_array);
         </div>
       </div>
       <div class="dodrtext">
-        <p class="dodrreview">
-          <?php echo $review->post_content ?>.
+        <p class="dodrreview review_<?php echo $review->ID; ?>">
+          <?php echo $review->post_content; ?>
           <span class="dodrusername">&ndash;<?php echo get_post_meta($review->ID, 'author', true); ?></span>
         </p>
       </div>
