@@ -5,73 +5,40 @@ var removeIntervalFN = function () {
     clearInterval(DODRGRRRRR);
   }
 };
-var DoDReviewsIntervalFN = function ($) { 
+var DoDReviewsIntervalFN = function DoDReviewsIntervalFN () {
   DODRGRRRRR = setInterval(function DoDReviewsInterval () {
     DoDSliderCycle($, 'left');
   }, dodReviewsSeconds * 1000);
 };
 
-var DoDSliderCycle = function DoDSliderCycle ($, dir) {
+var DoDSliderCycle = function DoDSliderCycle (dir) {
   var a;
   removeIntervalFN();
   if(!dir || dir === 'left') {
-    a = $('.dodrslider .dodrslide:first').fadeOut(300, function () {
-      $('.dodrslider .dodrslide:first').remove();
-    }).clone();
+    a = $('.dodrslider .dodrslide:first').remove();
     $('.dodrslider').append(a);
   } else {
-    a = $('.dodrslider .dodrslide:last').fadeOut(300, function () {
-      $('.dodrslider .dodrslide:last').remove();
-    }).clone();
+    a = $('.dodrslider .dodrslide:last').remove();    
     $('.dodrslider .dodrarrow:last').after(a);
   }
   DoDReviewsIntervalFN();
 };
 
 
-var dodReviewsSlider = function dodReviewsSlider ($) {
-  DoDReviewsIntervalFN($);
-  
+var dodReviewsSlider = function dodReviewsSlider () {
+  DoDReviewsIntervalFN();
   $(document).ready(function () {
     $('.dodrarrow').on('click', function () {
-      DoDSliderCycle($, $(this).data('dir'));
+      DoDSliderCycle($(this).data('dir'));
     });
   });
 };
 
-(function ($) {
+(function () {
   'use strict';
-  /**
-   * All of the code for your public-facing JavaScript source
-   * should reside in this file.
-   *
-   * Note that this assume you're going to use jQuery, so it prepares
-   * the $ function reference to be used within the scope of this
-   * function.
-   *
-   * From here, you're able to define handlers for when the DOM is
-   * ready:
-   *
-   * $(function() {
-   *
-   * });
-   *
-   * Or when the window is loaded:
-   *
-   * $( window ).load(function() {
-   *
-   * });
-   *
-   * ...and so on.
-   *
-   * Remember that ideally, we should not attach any more than a single DOM-ready or window-load handler
-   * for any particular page. Though other scripts in WordPress core, other plugins, and other themes may
-   * be doing this, we should try to minimize doing that in our own work.
-   */
   // Only do anything if jQuery isn't defined
   if (typeof jQuery == 'undefined') {
     if (typeof $ == 'function') {
-      // warning, global var
       var thisPageUsingOtherJSLibrary = true;
     }
     function getScript(url, success) {
@@ -96,7 +63,8 @@ var dodReviewsSlider = function dodReviewsSlider ($) {
         // Super failsafe - still somehow failed...
       } else {
         // jQuery loaded! Make sure to use .noConflict just in case
-        dodReviewsSlider(jQuery);
+        $ = jQuery;
+        dodReviewsSlider();
         if (thisPageUsingOtherJSLibrary) {
           // Run your jQuery Code
         } else {
@@ -104,9 +72,9 @@ var dodReviewsSlider = function dodReviewsSlider ($) {
         }
       }
     });
-  } else { // jQuery was already loaded
-    // Run your jQuery Code
-    dodReviewsSlider(jQuery);
+  } else {
+    $ = jQuery;
+    dodReviewsSlider();
   };
-})(jQuery);
+})();
 
