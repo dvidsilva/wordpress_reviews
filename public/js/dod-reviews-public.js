@@ -1,21 +1,44 @@
-var DoDSliderCycle = function DoDSliderCycle ($, dir) {
-  var a;
-  if(!dir || dir === 'left') {
-    a = $('.dodrslider .dodrslide:first').remove();
-    $('.dodrslider').append(a);
-    return;
+var dodReviewsSeconds = 3;
+var DODRGRRRRR;
+var removeIntervalFN = function () {
+  if (DODRGRRRRR) {
+    clearInterval(DODRGRRRRR);
   }
-  a = $('.dodrslider .dodrslide:last').remove();
-  $('.dodrslider .dodrarrow:last').after(a);
+};
+var DoDReviewsIntervalFN = function ($) { 
+  DODRGRRRRR = setInterval(function DoDReviewsInterval () {
+    DoDSliderCycle($, 'left');
+  }, dodReviewsSeconds * 1000);
 };
 
+var DoDSliderCycle = function DoDSliderCycle ($, dir) {
+  var a;
+  removeIntervalFN();
+  if(!dir || dir === 'left') {
+    a = $('.dodrslider .dodrslide:first').fadeOut(300, function () {
+      $('.dodrslider .dodrslide:first').remove();
+    }).clone();
+    $('.dodrslider').append(a);
+  } else {
+    a = $('.dodrslider .dodrslide:last').fadeOut(300, function () {
+      $('.dodrslider .dodrslide:last').remove();
+    }).clone();
+    $('.dodrslider .dodrarrow:last').after(a);
+  }
+  DoDReviewsIntervalFN();
+};
+
+
 var dodReviewsSlider = function dodReviewsSlider ($) {
+  DoDReviewsIntervalFN($);
+  
   $(document).ready(function () {
     $('.dodrarrow').on('click', function () {
       DoDSliderCycle($, $(this).data('dir'));
     });
   });
 };
+
 (function ($) {
   'use strict';
   /**
