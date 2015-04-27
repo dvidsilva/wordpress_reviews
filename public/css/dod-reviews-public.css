@@ -475,7 +475,7 @@
     #dodreviews12 .dodrarrow.dodrrighttarrow {
       background: transparent url('../../assets/arrow-right.png') no-repeat center;
       left: 66%; }
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 992px) {
       #dodreviews12 .dodrarrow {
         display: block; } }
   /* line 71, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
@@ -489,18 +489,18 @@
     /* line 78, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrslide:nth-child(1n+4) {
       display: none; }
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 992px) {
       #dodreviews12 .dodrslide {
         width: 50%;
         margin: 0; }
         /* line 84, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
         #dodreviews12 .dodrslide:nth-child(1n+3) {
           display: none; } }
-    @media screen and (max-width: 300px) {
+    @media screen and (max-width: 768px) {
       #dodreviews12 .dodrslide {
         width: 100%;
         float: none; } }
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 992px) {
       /* line 93, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       #dodreviews12 .dodrslide:nth-child(2) {
         background: whitesmoke; }
