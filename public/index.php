@@ -20,7 +20,7 @@
 ?>
 
 <!-- main container -->
-<div id="dodreviews">
+<div id="dodreviews12">
   <h1>Hear From Our Patients</h1>
    
    <div class="dodrarrow dodrleftarrow" data-dir="left"></div>
