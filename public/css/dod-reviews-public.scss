@@ -62,16 +62,16 @@ $break-sm: 300px;
     }
     &.dodrrighttarrow {
       background: transparent url('../../assets/arrow-right.png') no-repeat center ;
-      left: 63%;
+      left: 66%;
     }
     @media screen and (min-width: $break-md){
       display: block;
     }
   }
   .dodrslide {
-    width: 32%;
+    width: 31%;
     float: left;
-    margin: 0 0.5%;
+    margin: 0 1%;
     position: relative;
     transition: opacity 0.5s;
     list-style-type: none;

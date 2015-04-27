@@ -474,15 +474,15 @@
     /* line 63, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews .dodrarrow.dodrrighttarrow {
       background: transparent url('../../assets/arrow-right.png') no-repeat center;
-      left: 63%; }
+      left: 66%; }
     @media screen and (min-width: 650px) {
       #dodreviews .dodrarrow {
         display: block; } }
   /* line 71, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
   #dodreviews .dodrslide {
-    width: 32%;
+    width: 31%;
     float: left;
-    margin: 0 0.5%;
+    margin: 0 1%;
     position: relative;
     transition: opacity 0.5s;
     list-style-type: none; }
