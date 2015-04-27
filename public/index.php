@@ -56,7 +56,7 @@
           ?>
         </p>
         <p><span class="dodrusername">&ndash; by 
-          <span><?php echo get_post_meta($review->ID, 'author', true); ?></span></span></p>
+          <?php echo get_post_meta($review->ID, 'author', true); ?></span></p>
       </div>
       <p class="dodrdate"><?php echo get_post_meta($review->ID, 'date', true); ?></p>
     </li>
