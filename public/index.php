@@ -22,14 +22,15 @@
 <!-- main container -->
 <div id="dodreviews">
   <h1>Hear From Our Patients</h1>
-  <div class="dodrslider">
-  <div class="dodrarrow dodrleftarrow" data-dir="left"></div>
+   
+   <div class="dodrarrow dodrleftarrow" data-dir="left"></div>
   <div class="dodrarrow dodrrighttarrow" data-dir="right"></div>
+   
+<ul class="dodrslider">
   <?php
   foreach ($reviews_array as $k => $review) {
    ?>
-    <!-- slide begin -->
-    <div class="dodrslide">
+    <li class="dodrslide review_<?php echo $review->ID; ?>">
      <div class="dodrtop">
         <div class="dodrstars">
           <?php $stars =  get_post_meta($review->ID, 'stars', true);
@@ -42,18 +43,17 @@
         </div>
       </div>
       <div class="dodrtext">
-        <p class="dodrreview review_<?php echo $review->ID; ?>">
+        <p class="dodrreview ">
           <?php echo $review->post_content; ?>
           <span class="dodrusername">&ndash;<?php echo get_post_meta($review->ID, 'author', true); ?></span>
         </p>
       </div>
       <p class="dodrdate"><?php echo get_post_meta($review->ID, 'date', true); ?></p>
-    </div>
-    <!-- slide end -->
+    </li>
     <?php
     }
     ?>
-  </div>
+  </ul>
 </div>
 <!-- /main container -->
 <?php 
