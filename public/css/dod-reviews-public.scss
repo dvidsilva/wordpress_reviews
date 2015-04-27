@@ -52,10 +52,10 @@ $break-sm: 300px;
     background: transparent url('../../assets/arrow-left.png') no-repeat center ;
     cursor: pointer;
     z-index: 2;
-    opacity: 0.3;
+    opacity: 1;
     transition: opacity 0.5s;
     &:hover {
-      opacity: 0.9;
+      opacity: 0.7;
     }
     &.dodrleftarrow {
       left: 33%;
@@ -80,6 +80,10 @@ $break-sm: 300px;
     }
     @media screen and (max-width: $break-md) {
       width: 50%;
+      margin: 0;
+      &:nth-child(1n+3){
+        display: none;
+      }
     }
     @media screen and (max-width: $break-sm) {
       width: 100%;
@@ -88,8 +92,6 @@ $break-sm: 300px;
     @media screen and (min-width: $break-md){
       &:nth-child(2){
         background: $lightgray;
-//        transform: scale(1.1);
-//        margin: 0 3%;
         .dodrtop {
           background: $gray;
         }

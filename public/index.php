@@ -33,7 +33,7 @@
     <li class="dodrslide review_<?php echo $review->ID; ?>">
      <div class="dodrtop">
         <div class="dodrstars">
-          <?php $stars =  get_post_meta($review->ID, 'stars', true);
+          <?php $stars = 5; //  get_post_meta($review->ID, 'stars', true);
             for ($i = 0; $i < $stars; $i++) {
           ?>
             <span class="dodrstar"></span>
