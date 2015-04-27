@@ -19,6 +19,7 @@ $yellow: rgb(248,196,84);
 $pink: rgb(255, 76, 118);
 $black: black;
 $gray: rgb(62, 60, 71);
+$blue: rgb(39, 210, 223); 
 $lightgray: rgb(245, 245, 245);
 $break-md: 992px;
 $break-sm: 768px;
@@ -173,7 +174,9 @@ $break-sm: 768px;
       cursor: pointer;
     }    
     .dodrusername {
-      
+      span {
+        color: $blue;
+      }
     }
   }
   .dodrdate {

@@ -18,8 +18,8 @@ $(document).ready(function () {
   });
   $('.dodrreadmore').on('click', function () {
     $(this).hide();
-    $(this).parent().siblings('.dodrreview').find('span').hide();
-    $(this).parent().siblings('.dodrreview').find('.dodrfullr').show();
+    $(this).siblings().hide();
+    $(this).siblings('.dodrfullr').show();
   });
 });
 
