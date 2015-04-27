@@ -44,9 +44,21 @@
       </div>
       <div class="dodrtext">
         <p class="dodrreview ">
-          <?php echo $review->post_content; ?>
-          <span class="dodrusername">&ndash;<?php echo get_post_meta($review->ID, 'author', true); ?></span>
+          <?php $c = strip_tags($review->post_content); 
+            if(strlen($c) < 215 ) {
+              echo $c;
+            } else {
+              echo '<span class="dodrclippedr">' . substr(trim($c), 0, 214) . '&hellip;' . '</span>';
+              echo '<span class="dodrfullr">' . $c . '</span>';
+            } 
+          ?>
         </p>
+        <?php 
+          if(strlen($c)>=215){
+            echo '<p><a class="dodrreadmore">Read more.</a></p>';
+          }
+        ?>
+        <p><span class="dodrusername">&ndash;<?php echo get_post_meta($review->ID, 'author', true); ?></span></p>
       </div>
       <p class="dodrdate"><?php echo get_post_meta($review->ID, 'date', true); ?></p>
     </li>

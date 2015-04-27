@@ -157,13 +157,23 @@ $break-sm: 768px;
         margin-right: -3px;
         vertical-align: -0.4em;
       }
-    }
-    .dodrusername {
-      &:before {
+      &:after {
         content: '\201D';
         margin-left: -3px;
         margin-right: 1em;
+        font-size: 2em;
+        line-height: 0em;
       }
+      .dodrfullr {
+        display: none;
+      }
+    }
+    .dodrreadmore {
+      text-decoration: none;
+      cursor: pointer;
+    }    
+    .dodrusername {
+      
     }
   }
   .dodrdate {

@@ -16,6 +16,11 @@ $(document).ready(function () {
   $('.dodrarrow').on('click', function () {
     DoDSliderCycle($(this).data('dir'));
   });
+  $('.dodrreadmore').on('click', function () {
+    $(this).hide();
+    $(this).parent().siblings('.dodrreview').find('span').hide();
+    $(this).parent().siblings('.dodrreview').find('.dodrfullr').show();
+  });
 });
 
 
