@@ -585,4 +585,8 @@
     font-weight: bold;
     margin-top: 1em; }
 
+/* line 176, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+.removed {
+  display: none !important; }
+
 /*# sourceMappingURL=dod-reviews-public.css.map */
