@@ -45,7 +45,7 @@
       <div class="dodrtext">
         <p class="dodrreview ">
           <?php $c = strip_tags($review->post_content); 
-            if(strlen($c) < 215 ) {
+            if(strlen($c) < 220 ) {
               echo $c;
             } else {
               echo '<span class="dodrclippedr">' . substr(trim($c), 0, 214) . '&hellip;' . '</span>';
