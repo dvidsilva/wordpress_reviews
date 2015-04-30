@@ -77,6 +77,10 @@ $break-sm: 768px;
     position: relative;
     transition: opacity 0.5s;
     list-style-type: none;
+    .dodrtop {
+      padding: 4px 0;
+      margin-bottom: 4px;
+    }
     &:nth-child(1n+4) {
       display: none;
     }
@@ -194,7 +198,7 @@ $break-sm: 768px;
   .dodrdate {
     padding: 0 1em;
     font-weight: bold;
-    margin-top: 1em;
+    margin-top: 0.3em;
   }
 }
 
