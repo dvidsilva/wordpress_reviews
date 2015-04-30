@@ -23,8 +23,8 @@
 <div id="dodreviews12">
   <h1>Hear From Our Patients</h1>
    
-   <div class="dodrarrow dodrleftarrow" data-dir="left"></div>
-  <div class="dodrarrow dodrrighttarrow" data-dir="right"></div>
+   <div class="dodrarrow dodrleftarrow" data-dir="right"></div>
+  <div class="dodrarrow dodrrighttarrow" data-dir="left"></div>
    
 <ul class="dodrslider">
   <?php
