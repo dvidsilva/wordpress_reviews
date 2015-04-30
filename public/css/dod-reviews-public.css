@@ -581,14 +581,9 @@
       vertical-align: -0.4em;
       display: block;
       position: absolute;
-      top: 45%;
+      top: 85px;
       left: -10px;
-      color: #dadada;
-      -webkit-transform: scale(0.5, 1);
-      -moz-transform: scale(0.5, 1);
-      -ms-transform: scale(0.5, 1);
-      -o-transform: scale(0.5, 1);
-      transform: scale(0.5, 1); }
+      color: #dadada; }
     /* line 169, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview:after {
       content: '\201D';
@@ -596,14 +591,9 @@
       line-height: 0.1em;
       display: block;
       position: absolute;
-      top: 45%;
+      top: 85px;
       right: -10px;
-      color: #dadada;
-      -webkit-transform: scale(0.5, 1);
-      -moz-transform: scale(0.5, 1);
-      -ms-transform: scale(0.5, 1);
-      -o-transform: scale(0.5, 1);
-      transform: scale(0.5, 1); }
+      color: #dadada; }
     /* line 180, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview .dodrfullr {
       display: none; }

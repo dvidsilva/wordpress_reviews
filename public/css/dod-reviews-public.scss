@@ -161,10 +161,10 @@ $break-sm: 768px;
         vertical-align: -0.4em;
         display: block;
         position: absolute;
-        top: 45%;
+        top: 85px;
         left: -10px;
         color: $grayl;
-        @include vendor-prefix(transform, scale(0.5,1.0));
+//        @include vendor-prefix(transform, scale(0.5,1.0));
       }
       &:after {
         content: '\201D';
@@ -172,10 +172,10 @@ $break-sm: 768px;
         line-height: 0.1em;
         display: block;
         position: absolute;
-        top: 45%;
+        top: 85px;
         right: -10px;
         color: $grayl;
-        @include vendor-prefix(transform, scale(0.5,1.0));
+//        @include vendor-prefix(transform, scale(0.5,1.0));
       }
       .dodrfullr {
         display: none;
