@@ -583,7 +583,7 @@
       position: absolute;
       top: 85px;
       left: -10px;
-      color: #dadada; }
+      color: #BBB; }
     /* line 169, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview:after {
       content: '\201D';
@@ -593,7 +593,7 @@
       position: absolute;
       top: 85px;
       right: -10px;
-      color: #dadada; }
+      color: #BBB; }
     /* line 180, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview .dodrfullr {
       display: none; }
