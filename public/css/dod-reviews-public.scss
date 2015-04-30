@@ -164,6 +164,7 @@ $break-sm: 768px;
         top: 45%;
         left: -10px;
         color: $grayl;
+        @include vendor-prefix(transform, scale(0.5,1.0));
       }
       &:after {
         content: '\201D';
@@ -174,6 +175,7 @@ $break-sm: 768px;
         top: 45%;
         right: -10px;
         color: $grayl;
+        @include vendor-prefix(transform, scale(0.5,1.0));
       }
       .dodrfullr {
         display: none;
