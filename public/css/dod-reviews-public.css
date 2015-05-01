@@ -587,9 +587,11 @@
       position: absolute;
       top: 85px;
       left: -10px;
-      color: #BBB; }
-    /* line 173, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      color: #BBB;
+      display: none; }
+    /* line 174, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview:after {
+      display: none;
       content: '\201D';
       font-size: 4em;
       line-height: 0.1em;
@@ -598,23 +600,23 @@
       top: 85px;
       right: -10px;
       color: #BBB; }
-    /* line 184, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+    /* line 186, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview .dodrfullr {
       display: none; }
-    /* line 188, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+    /* line 190, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreadmore {
       text-decoration: none;
       cursor: pointer; }
-    /* line 193, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+    /* line 195, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrusername span {
       color: #27d2df; }
-  /* line 198, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+  /* line 200, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
   #dodreviews12 .dodrdate {
     padding: 0 1em;
     font-weight: bold;
     margin-top: 0.3em; }
 
-/* line 207, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+/* line 209, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
 .removed {
   display: none !important; }
 
