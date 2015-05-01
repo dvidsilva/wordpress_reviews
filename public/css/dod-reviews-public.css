@@ -591,11 +591,11 @@
       display: none; }
     /* line 174, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     #dodreviews12 .dodrtext .dodrreview:after {
-      display: none;
       content: '\201D';
       font-size: 4em;
       line-height: 0.1em;
       display: block;
+      display: none;
       position: absolute;
       top: 85px;
       right: -10px;

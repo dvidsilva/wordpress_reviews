@@ -172,11 +172,11 @@ $break-sm: 768px;
 //        @include vendor-prefix(transform, scale(0.5,1.0));
       }
       &:after {
-        display: none;
         content: '\201D';
         font-size: 4em;  
         line-height: 0.1em;
         display: block;
+        display: none;
         position: absolute;
         top: 85px;
         right: -10px;
