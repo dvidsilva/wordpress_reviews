@@ -40,8 +40,9 @@ $break-sm: 768px;
   }
   .dodrslider {
     width: 100%;
-    max-width: 1024px;
+    max-width: 1055px;
     margin: 0 auto;
+    padding: 0;
     @extend %clearfix;
   }
   
@@ -60,7 +61,7 @@ $break-sm: 768px;
       opacity: 0.7;
     }
     &.dodrleftarrow {
-      left: 33%;
+      left: 31%;
     }
     &.dodrrighttarrow {
       background: transparent url('../../assets/arrow-right.png') no-repeat center ;
@@ -71,7 +72,7 @@ $break-sm: 768px;
     }
   }
   .dodrslide {
-    width: 31%;
+    width: 31.333333%;
     float: left;
     margin: 0 1%;
     position: relative;
@@ -80,6 +81,22 @@ $break-sm: 768px;
     .dodrtop {
       padding: 4px 0;
       margin-bottom: 4px;
+    }
+    &:first-child{
+      margin-left: 0;
+      margin-right: 2%;
+      &.dodrtext {
+        padding-left: 0;
+        padding-right: 2em;
+      }
+    }
+    &:nth-child(3){
+      margin-right: 0;
+      margin-left: 2%;
+      &.dodrtext {
+        padding-right: 0;
+        padding-left: 2em;
+      }
     }
     &:nth-child(1n+4) {
       display: none;
