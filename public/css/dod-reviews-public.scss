@@ -82,22 +82,6 @@ $break-sm: 768px;
       padding: 4px 0;
       margin-bottom: 4px;
     }
-    &:first-child{
-      margin-left: 0;
-      margin-right: 2%;
-      .dodrtext {
-        padding-left: 0;
-        padding-right: 2em;
-      }
-    }
-    &:nth-child(3){
-      margin-right: 0;
-      margin-left: 2%;
-      .dodrtext {
-        padding-right: 0;
-        padding-left: 2em;
-      }
-    }
     &:nth-child(1n+4) {
       display: none;
     }
@@ -117,6 +101,22 @@ $break-sm: 768px;
         background: $lightgray;
         .dodrtop {
           background: $gray;
+        }
+      }
+      &:first-child{
+        margin-left: 0;
+        margin-right: 2%;
+        .dodrtext {
+          padding-left: 0;
+          padding-right: 2em;
+        }
+      }
+      &:nth-child(3){
+        margin-right: 0;
+        margin-left: 2%;
+        .dodrtext {
+          padding-right: 0;
+          padding-left: 2em;
         }
       }
     }
