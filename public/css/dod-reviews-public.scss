@@ -85,7 +85,7 @@ $break-sm: 768px;
     &:first-child{
       margin-left: 0;
       margin-right: 2%;
-      &.dodrtext {
+      .dodrtext {
         padding-left: 0;
         padding-right: 2em;
       }
@@ -93,7 +93,7 @@ $break-sm: 768px;
     &:nth-child(3){
       margin-right: 0;
       margin-left: 2%;
-      &.dodrtext {
+      .dodrtext {
         padding-right: 0;
         padding-left: 2em;
       }
