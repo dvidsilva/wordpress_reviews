@@ -295,6 +295,7 @@ $purple: #413b47;
       &:first-child {
         padding-right: 30px;
         padding-top: 10px;
+        position: relative;
         &:after {
           content: " ";
           height: 3em;
@@ -336,6 +337,27 @@ $purple: #413b47;
   }
   @media screen and (max-width: $break-sm) {
     text-align: center;
+    margin: 5em 0 3em 0;
+    padding-bottom: 25px;
+    h2 {
+      margin: auto;
+      max-width: 80%;
+    }
+    p {
+      br {
+        display: none;
+      }
+      a {
+        color: white;
+        font-weight: bold;
+        display: block;
+        max-width: 80%;
+        margin: 10px auto;
+        &:after {
+          display: none;
+        }
+      }
+    }
   }
   @media screen and (min-width: $break-sm) {
     margin-bottom: 3em;
