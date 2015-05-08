@@ -24,12 +24,15 @@ $blue: rgb(39, 210, 223);
 $lightgray: rgb(245, 245, 245);
 $break-md: 992px;
 $break-sm: 768px;
+$break-lg: 1055px;
+$white: white;
+$purple: #413b47;
 
 #dodreviews12 {
   font-family: 'Gotham Rounded', Arial, sans-serif;
   position: relative;
   width: 100%;
-  max-width: 1055px;
+  max-width: $break-lg;
   margin: 0 auto;
   padding: 0;
     
@@ -46,7 +49,6 @@ $break-sm: 768px;
   }
   .dodrslider {
     width: 100%;
-//    max-width: 1055px;
     margin: 0 auto;
     padding: 0;
     @extend %clearfix;
@@ -234,4 +236,95 @@ $break-sm: 768px;
 
 .removed {
   display: none !important;
+}
+
+.dodrheaderprev {
+  background: $purple;
+}
+
+.dodrdoctorheader {
+  background: $purple;
+  margin-top: 40px;
+  max-width: $break-lg;
+  margin: auto;
+  margin-top: 2em;
+  color: white;
+  position: relative;
+  min-height: 190px;
+  &:before {
+    width: 100%;
+    background: $purple;
+    color: $purple;
+    content: "-";
+    height: 10px;
+    display: block;
+  }
+  img {
+    width: 240px;
+    border: 8px solid $blue;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: $white;
+    margin-top: -25px;
+  }
+  h1 {
+  
+  }
+  h2 {
+    border-bottom: 1px solid $white;
+    padding-bottom: 10px;
+  }
+  p {
+    a {
+      color: white;
+      &:first-child {
+
+      }
+      &:last-child {
+        background: $pink;
+        padding-top: 3px;
+        border: 1px solid white;
+        border-radius: 3px;
+        padding: 8px 10px;
+        &:before {
+          content: url('../../assets/camera.png');
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $break-sm) {
+    text-align: center;
+  }
+  @media screen and (min-width: $break-sm) {
+    img {
+      position: absolute;
+      left: 2em;
+    }
+    h1 {
+      position: absolute;
+      left: 300px;
+      top: 25px;
+    }
+    h2 {
+      position: absolute;
+      left: 300px;
+      top: 70px;
+      right: 1px;
+    }
+    p {
+      a {
+        &:last-child {
+          position: absolute;
+          left: 300px;
+          top: 130px;
+        }
+        &:first-child {
+          position: absolute;
+          right: 2px;
+          top: 70px;
+        }
+      }
+    }
+  }
 }
