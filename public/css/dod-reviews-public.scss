@@ -353,6 +353,8 @@ $purple: #413b47;
         display: block;
         max-width: 80%;
         margin: 10px auto;
+        padding-left: 0;
+        padding-right: 0;
         &:after {
           visibility: hidden;
         }
