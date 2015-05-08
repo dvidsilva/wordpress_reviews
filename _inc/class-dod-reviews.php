@@ -219,8 +219,7 @@ class DoDReviews {
                 $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_box' );
                 $this->loader->add_action( 'save_post', $plugin_admin, 'save_callback' );
           
-                $plugin_doctors = new DoDReviewsDoctors( $this->get_plugin_name(), $this->get_version() );
-                $this->loader->add_action( 'init', $plugin_doctors, 'register_post_type' );
+                
         }
 
         /**
@@ -238,6 +237,9 @@ class DoDReviews {
                 $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
                 // http://www.sitepoint.com/wordpress-shortcodes-tutorial/
                 add_shortcode( 'dodreviews', array( $plugin_public, 'display_reviews' ));
+          
+                $plugin_doctors = new DoDReviewsDoctors( $this->get_plugin_name(), $this->get_version() );
+                $this->loader->add_action( 'init', $plugin_doctors, 'register_post_type' );
         }
 
         /**
