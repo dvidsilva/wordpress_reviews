@@ -241,7 +241,15 @@ $purple: #413b47;
 .dodrheaderprev {
   background: $purple;
 }
-
+.dodrdcontent {
+  p {
+    max-width: $break-lg;
+    margin: 0 auto;
+  }
+  #dodreviews12 {
+    margin: 30px auto 50px;
+  }
+}
 .dodrdoctorheader {
   background: $purple;
   margin-top: 40px;
@@ -251,6 +259,7 @@ $purple: #413b47;
   color: white;
   position: relative;
   min-height: 190px;
+  margin-bottom: 1em;
   &:before {
     width: 100%;
     background: $purple;
@@ -268,11 +277,12 @@ $purple: #413b47;
     margin-top: -25px;
   }
   h1 {
-  
+    color: white;
   }
   h2 {
     border-bottom: 1px solid $white;
     padding-bottom: 10px;
+    color: white;
   }
   p {
     a {
@@ -297,6 +307,7 @@ $purple: #413b47;
     text-align: center;
   }
   @media screen and (min-width: $break-sm) {
+    margin-bottom: 3em;
     img {
       position: absolute;
       left: 2em;

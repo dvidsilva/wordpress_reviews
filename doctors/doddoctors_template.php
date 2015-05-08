@@ -1,6 +1,12 @@
 <?php
   get_header();
+?>
+<div class='dodrdcontent'>
+<?php
   the_content('Read more...');
+?>
+</div>
+<?php  
   get_footer(); 
 ?>
 <script type="text/javascript">
