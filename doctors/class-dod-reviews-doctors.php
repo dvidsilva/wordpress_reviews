@@ -96,6 +96,15 @@ class DoDReviewsDoctors {
           register_post_type($this->post_type, $this->post_type_args);
         }
 
+  
+        public function register_template($single_template) {
+             global $post;
+             if ($post->post_type == $this->post_type) {
+                  $single_template = dirname( __FILE__ ) . '/'.$this->post_type.'_template.php';
+             }
+             return $single_template;
+        }
+  
         /**
          * add the meta boxes to the review create page
          *

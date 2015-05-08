@@ -238,8 +238,10 @@ class DoDReviews {
                 // http://www.sitepoint.com/wordpress-shortcodes-tutorial/
                 add_shortcode( 'dodreviews', array( $plugin_public, 'display_reviews' ));
           
+                
                 $plugin_doctors = new DoDReviewsDoctors( $this->get_plugin_name(), $this->get_version() );
                 $this->loader->add_action( 'init', $plugin_doctors, 'register_post_type' );
+                add_filter( 'single_template', array( $plugin_doctors, 'register_template' ));
         }
 
         /**
