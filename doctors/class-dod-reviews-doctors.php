@@ -74,7 +74,7 @@ class DoDReviewsDoctors {
         );
   
         public $post_meta = array(
-          array('name' => 'doctor_type', 'label'=>'Doctor Type', 'options' => ['md', 'pediatrician']),
+          array('name' => 'doctor_type', 'label'=>'Doctor Type', 'options' => array('md', 'pediatrician')),
         );
   
         /**
