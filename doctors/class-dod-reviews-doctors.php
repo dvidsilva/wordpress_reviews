@@ -73,6 +73,10 @@ class DoDReviewsDoctors {
           'show_in_nav_menus' => false
         );
   
+        public $post_meta = array(
+          array('name' => 'doctor_type', 'label'=>'Doctor Type', 'options' => ['md', 'pediatrician']),
+        );
+  
         /**
          * Initialize the class and set its properties.
          *
@@ -106,15 +110,15 @@ class DoDReviewsDoctors {
         }
   
         /**
-         * add the meta boxes to the review create page
+         * add the meta boxes to the doctor create page
          *
          * @since    1.0.0
          */
         public function add_meta_box ($post_type) {
           if ($post_type==$this->post_type) {
             add_meta_box(
-              'dod_revies_meta'
-              ,'Review information'
+              'dod_doctors_meta'
+              ,'Doctor information'
               ,array( $this, 'render_meta_box_content' )
               ,$post_type
               ,'advanced'
@@ -133,7 +137,7 @@ class DoDReviewsDoctors {
           wp_nonce_field( 'myplugin_inner_custom_box', 'myplugin_inner_custom_box_nonce' );
           // Use get_post_meta to retrieve an existing value from the database.
           echo '<table>';
-          echo '<thead><tr><th class="left">Name</th><th>Value</th></tr></thead>';
+          echo '<thead><tr><th class="left"> &nbsp; </th><th> &nbsp; </th></tr></thead>';
           foreach ($this->post_meta as $meta ) {
             $value = get_post_meta( $post->ID, $meta['name'], true );
             // Display the form, using the current value.
@@ -141,8 +145,17 @@ class DoDReviewsDoctors {
             echo '<td class="left"><label for="myplugin_new_field">';
             echo $meta['label'];
             echo '</label></td>';
-            echo '<td><input type="text" id="'.$meta['name'].'" name="'.$meta['name'].'"';
-            echo ' value="' . esc_attr( $value ) . '" size="25" /></td>';
+            if (!$meta['options']) {
+              echo '<td><input type="text" id="'.$meta['name'].'" name="'.$meta['name'].'"';
+              echo ' value="' . esc_attr( $value ) . '" size="25" /></td>';
+            } else {
+              echo '<td><select id="'.$meta['name'].'" name="'.$meta['name'].'">';
+              foreach ($meta['options'] as $option) {
+                  $selected = (esc_attr( $value ) == $option ? 'selected' : '');
+                  echo '<option value='.$option.' '.$selected.'>'.$option.'</option>';
+              }
+              echo '</td>';
+            }
             echo '</tr>';
           }
           echo '</table>';
@@ -158,7 +171,6 @@ class DoDReviewsDoctors {
            * We need to verify this came from the our screen and with proper authorization,
            * because save_post can be triggered at other times.
            */
-
           // Check if our nonce is set.
           if ( ! isset( $_POST['myplugin_inner_custom_box_nonce'] ) )
             return $post_id;

@@ -219,6 +219,9 @@ class DoDReviews {
                 $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_box' );
                 $this->loader->add_action( 'save_post', $plugin_admin, 'save_callback' );
           
+                $plugin_doctors = new DoDReviewsDoctors( $this->get_plugin_name(), $this->get_version() );
+                $this->loader->add_action( 'add_meta_boxes', $plugin_doctors, 'add_meta_box' );
+                $this->loader->add_action( 'save_post', $plugin_doctors, 'save_callback' );
                 
         }
 
