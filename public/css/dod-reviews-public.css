@@ -331,7 +331,7 @@
         margin: 10px auto; }
         /* line 356, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
         .dodrdoctorheader p a:after {
-          display: none; } }
+          visibility: hidden; } }
   @media screen and (min-width: 768px) {
     .dodrdoctorheader {
       margin-bottom: 3em; }

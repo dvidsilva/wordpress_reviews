@@ -354,7 +354,7 @@ $purple: #413b47;
         max-width: 80%;
         margin: 10px auto;
         &:after {
-          display: none;
+          visibility: hidden;
         }
       }
     }
