@@ -281,6 +281,7 @@ $purple: #413b47;
   }
   h1 {
     color: white;
+    font-weight: bold;
   }
   h2 {
     border-bottom: 1px solid $white;
@@ -290,8 +291,22 @@ $purple: #413b47;
   p {
     a {
       color: white;
+      font-weight: bold;
       &:first-child {
-
+        padding-right: 40px;
+        &:after {
+          content: " ";
+          height: 3em;
+          width: 3em;
+          background-image: url('../../assets/arrowlink.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          display: inline-block;  
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
       &:last-child {
         background: $pink;
@@ -301,10 +316,9 @@ $purple: #413b47;
         padding: 8px 10px;
         text-transform: uppercase;
         position: relative;
-        padding-left: 60px;
+        padding-left: 50px;
         &:before {
           content: " ";
-          margin-right: 10px;
           height: 2em;
           width: 2em;
           background-image: url('../../assets/camera.png');

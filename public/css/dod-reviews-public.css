@@ -258,16 +258,34 @@
     margin-top: -25px; }
   /* line 282, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
   .dodrdoctorheader h1 {
-    color: white; }
-  /* line 285, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+    color: white;
+    font-weight: bold; }
+  /* line 286, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
   .dodrdoctorheader h2 {
     border-bottom: 1px solid white;
     padding-bottom: 10px;
     color: white; }
-  /* line 291, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+  /* line 292, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
   .dodrdoctorheader p a {
-    color: white; }
-    /* line 296, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+    color: white;
+    font-weight: bold; }
+    /* line 295, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+    .dodrdoctorheader p a:first-child {
+      padding-right: 40px; }
+      /* line 297, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      .dodrdoctorheader p a:first-child:after {
+        content: " ";
+        height: 3em;
+        width: 3em;
+        background-image: url('../../assets/arrowlink.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0; }
+    /* line 311, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     .dodrdoctorheader p a:last-child {
       background: #ff4c76;
       padding-top: 3px;
@@ -276,11 +294,10 @@
       padding: 8px 10px;
       text-transform: uppercase;
       position: relative;
-      padding-left: 60px; }
-      /* line 305, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      padding-left: 50px; }
+      /* line 320, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       .dodrdoctorheader p a:last-child:before {
         content: " ";
-        margin-right: 10px;
         height: 2em;
         width: 2em;
         background-image: url('../../assets/camera.png');
@@ -297,27 +314,27 @@
   @media screen and (min-width: 768px) {
     .dodrdoctorheader {
       margin-bottom: 3em; }
-      /* line 327, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      /* line 341, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       .dodrdoctorheader img {
         position: absolute;
         left: 2em; }
-      /* line 331, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      /* line 345, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       .dodrdoctorheader h1 {
         position: absolute;
         left: 300px;
         top: 25px; }
-      /* line 336, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      /* line 350, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       .dodrdoctorheader h2 {
         position: absolute;
         left: 300px;
         top: 70px;
         right: 1px; }
-      /* line 344, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      /* line 358, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       .dodrdoctorheader p a:last-child {
         position: absolute;
         left: 300px;
         top: 130px; }
-      /* line 349, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
+      /* line 363, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
       .dodrdoctorheader p a:first-child {
         position: absolute;
         right: 2px;
