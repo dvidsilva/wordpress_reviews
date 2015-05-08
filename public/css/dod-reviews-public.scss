@@ -293,7 +293,8 @@ $purple: #413b47;
       color: white;
       font-weight: bold;
       &:first-child {
-        padding-right: 40px;
+        padding-right: 30px;
+        padding-top: 10px;
         &:after {
           content: " ";
           height: 3em;
