@@ -300,16 +300,21 @@ $purple: #413b47;
         border-radius: 3px;
         padding: 8px 10px;
         text-transform: uppercase;
+        position: relative;
+        padding-left: 60px;
         &:before {
           content: " ";
           margin-right: 10px;
-          height: 1em;
-          width: 1em;
+          height: 2em;
+          width: 2em;
           background-image: url('../../assets/camera.png');
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain;
           display: inline-block;  
+          position: absolute;
+          top: 5px;
+          left: 10px;
         }
       }
     }
