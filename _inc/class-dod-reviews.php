@@ -162,6 +162,11 @@ class DoDReviews {
                 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-dod-reviews-admin.php';
 
                 /**
+                 * Creates the doctor's post type.
+                 */
+                require_once plugin_dir_path( dirname( __FILE__ ) ) . 'doctors/class-dod-reviews-doctors.php';
+          
+                /**
                  * The class responsible for defining all actions that occur in the public-facing
                  * side of the site.
                  */
@@ -213,6 +218,9 @@ class DoDReviews {
                 $this->loader->add_action( 'init', $plugin_admin, 'register_post_type' );
                 $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_box' );
                 $this->loader->add_action( 'save_post', $plugin_admin, 'save_callback' );
+          
+                $plugin_doctors = new DoDReviewsDoctors( $this->get_plugin_name(), $this->get_version() );
+                $this->loader->add_action( 'init', $plugin_doctors, 'register_post_type' );
         }
 
         /**
