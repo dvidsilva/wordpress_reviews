@@ -28,6 +28,11 @@ $break-sm: 768px;
 #dodreviews12 {
   font-family: 'Gotham Rounded', Arial, sans-serif;
   position: relative;
+  width: 100%;
+  max-width: 1055px;
+  margin: 0 auto;
+  padding: 0;
+    
   div, p {
     box-sizing: border-box;
   }
@@ -41,7 +46,7 @@ $break-sm: 768px;
   }
   .dodrslider {
     width: 100%;
-    max-width: 1055px;
+//    max-width: 1055px;
     margin: 0 auto;
     padding: 0;
     @extend %clearfix;
