@@ -44,15 +44,19 @@
       </div>
       <div class="dodrtext">
         <p class="dodrreview ">
-          
-          <?php $c = strip_tags($review->post_content); 
+          <?php 
+            $c = strip_tags($review->post_content); 
+            $doctor_link = get_post_meta($review->ID, 'doctor_link', true);
+            $doctor_name = get_post_meta($review->ID, 'doctor_name', true);            
+            $content  = str_replace($doctor_name, "<a href='".$doctor_link."' >".$doctor_name."</a>", $c);
             if(strlen($c) < 220 ) {
-              echo $c;
+              echo $content;
             } else {
-              echo '<span class="dodrclippedr">' . substr(trim($c), 0, 214) . '&hellip;' . '</span>' ;
+              echo '<span class="dodrclippedr">' ;
+              echo substr(trim($c), 0, 214) . '&hellip;' . '</span>' ;
               echo '<a class="dodrreadmore">[more]</a>';
-              echo '<span class="dodrfullr">' . $c . '</span>';
-            } 
+              echo '<span class="dodrfullr">' . $content . '</span>';
+            }
           ?>
         </p>
         <p><span class="dodrusername">&ndash; by 
