@@ -252,6 +252,9 @@ $purple: #413b47;
   .addtoany_content_top  {
     display: none !important;
   }
+  > p:last-of-type {
+    margin-bottom: 3em;
+  }
 }
 .dodrdoctorheader {
   background: $purple;
@@ -262,7 +265,7 @@ $purple: #413b47;
   color: white;
   position: relative;
   min-height: 190px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   &:before {
     width: 100%;
     background: $purple;
@@ -362,7 +365,7 @@ $purple: #413b47;
     }
   }
   @media screen and (min-width: $break-sm) {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
     img {
       position: absolute;
       left: 2em;
