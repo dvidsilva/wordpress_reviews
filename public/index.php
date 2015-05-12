@@ -46,9 +46,9 @@
         <p class="dodrreview ">
           <?php 
             $c = strip_tags($review->post_content); 
-            $doctor_link = get_post_meta($review->ID, 'doctor_link', true);
+            $doctor_page = get_post_meta($review->ID, 'doctor_page', true);
             $doctor_name = get_post_meta($review->ID, 'doctor_name', true);            
-            $content  = str_replace($doctor_name, "<a href='".$doctor_link."' >".$doctor_name."</a>", $c);
+            $content  = str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", $c);
             if(strlen($c) < 220 ) {
               echo $content;
             } else {
