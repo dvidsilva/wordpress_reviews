@@ -52,8 +52,9 @@
             if(strlen($c) < 220 ) {
               echo $content;
             } else {
+              $c  = str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", substr(trim($c), 0, 214));
               echo '<span class="dodrclippedr">' ;
-              echo substr(trim($c), 0, 214) . '&hellip;' . '</span>' ;
+              echo $c . '&hellip;' . '</span>' ;
               echo '<a class="dodrreadmore">[more]</a>';
               echo '<span class="dodrfullr">' . $content . '</span>';
             }
