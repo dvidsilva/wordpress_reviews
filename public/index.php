@@ -38,7 +38,7 @@ $total_reviews = count($reviews_array);
 
 if($doctor_page){
   // getting a minimun of 3 reviews
-  $missing = $total_reviews - 3;
+  $missing = 3 - $total_reviews;
   if($missing > 0 ) {
     $args['post_per_page'] = $missing;
       $args['meta_query'] = array(
