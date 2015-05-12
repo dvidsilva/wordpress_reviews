@@ -1,6 +1,6 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
   $args = array(
 	'posts_per_page'   => 40,
@@ -25,8 +25,9 @@ if($doctor_page){
   $args['meta_key'] = 'doctor_page';
   $args['meta_value'] = $current_doc;
 }
-$total_reviews = count($reviews_array);
 $reviews_array = get_posts( $args );
+
+$total_reviews = count($reviews_array);
 
 
 ?>
