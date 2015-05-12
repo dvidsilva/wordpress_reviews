@@ -47,7 +47,8 @@
           <?php 
             $c = strip_tags($review->post_content); 
             $doctor_page = get_post_meta($review->ID, 'doctor_page', true);
-            $doctor_name = get_post_meta($review->ID, 'doctor_name', true);            
+            $doctor_page = parse_url($doctor_page, PHP_URL_SCHEME) === null ? "http://". $doctor_page : $doctor_page;
+            $doctor_name = get_post_meta($review->ID, 'doctor_name', true);        
             $content  = str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", $c);
             if(strlen($c) < 220 ) {
               echo $content;
