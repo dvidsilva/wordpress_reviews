@@ -27,6 +27,7 @@ $break-sm: 768px;
 $break-lg: 1055px;
 $white: white;
 $purple: #413b47;
+$lightblack: #333;
 
 #dodreviews12 {
   font-family: 'Gotham Rounded', Arial, sans-serif;
@@ -242,9 +243,10 @@ $purple: #413b47;
   background: $purple;
 }
 .dodrdcontent {
-  p {
+  p, .dodrtwocolumsn {
     max-width: $break-lg;
     margin: 0 auto;
+    color: $lightblack;
   }
   #dodreviews12 {
     margin: 30px auto 50px;
@@ -254,6 +256,29 @@ $purple: #413b47;
   }
   > p:last-of-type {
     margin-bottom: 3em;
+  }
+}
+.dodrtwocolumsn {
+  iframe {
+    max-width: 560px;
+    margin: 0 auto;
+    display: block;
+  }
+  @media (min-width: $break-md) {
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;      
+    }
+    .dodrcol1, .dodrcol2 {
+      box-sizing: border-box;
+      width: 50%;
+      padding: 0 10px;
+      float: left;
+      p:last-of-type {
+        margin-bottom: 3em;
+      }
+    }
   }
 }
 .dodrdoctorheader {
