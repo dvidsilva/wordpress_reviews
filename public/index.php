@@ -22,10 +22,16 @@ ini_set('display_errors', 1);
 
 
 if($doctor_page){
-  $args['meta_key'] = 'doctor_page';
-  $args['meta_value'] = $current_doc;
+  //$args['meta_key'] = 'doctor_page';
+  //$args['meta_value'] = $current_doc;
+  $args['meta_query'] = array(
+    array('key' => 'doctor_page',
+          'value' => $current_doc,
+          'compare' => 'LIKE'
+         )
+  );
 }
-print_r($args);
+//print_r($args);
 $reviews_array = get_posts( $args );
 
 $total_reviews = count($reviews_array);
