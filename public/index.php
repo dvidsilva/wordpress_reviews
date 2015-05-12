@@ -1,5 +1,5 @@
 <?php $args = array(
-	'posts_per_page'   => 15,
+	'posts_per_page'   => 40,
 	'offset'           => 0,
 	'category'         => '',
 	'category_name'    => '',
@@ -13,19 +13,31 @@
 	'post_mime_type'   => '',
 	'post_parent'      => '',
 	'post_status'      => 'publish',
-	'suppress_filters' => true 
+	'suppress_filters' => true
 );
- $reviews_array = get_posts( $args );
-//print_r($reviews_array);
+
+
+if($doctor_page){
+  $args['meta_key'] = 'doctor_page';
+  $args['meta_value'] = $current_doc;
+}
+$total_reviews = count($reviews_array);
+$reviews_array = get_posts( $args );
+
+
 ?>
 
 <!-- main container -->
 <div id="dodreviews12">
   <h1>Hear From Our Patients</h1>
-   
-   <div class="dodrarrow dodrleftarrow" data-dir="right"></div>
+  <?php
+    if($total_reviews>3){
+  ?>
+  <div class="dodrarrow dodrleftarrow" data-dir="right"></div>
   <div class="dodrarrow dodrrighttarrow" data-dir="left"></div>
-   
+  <?php
+    }
+  ?>
 <ul class="dodrslider">
   <?php
   foreach ($reviews_array as $k => $review) {
