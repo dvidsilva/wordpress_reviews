@@ -31,12 +31,26 @@ if($doctor_page){
          )
   );
 }
-//print_r($args);
+
 $reviews_array = get_posts( $args );
 
 $total_reviews = count($reviews_array);
 
-
+if($doctor_page){
+  // getting a minimun of 3 reviews
+  $missing = $total_reviews - 3;
+  if($missing > 0 ) {
+    $args['post_per_page'] = $missing;
+      $args['meta_query'] = array(
+      array('key' => 'doctor_page',
+            'value' => $current_doc,
+            'compare' => '!='
+           )
+    );
+    $reviews_array2 = get_posts( $args );
+    $reviews_array = array_merge($reviews_array, $reviews_array2);
+  }
+}
 ?>
 
 <!-- main container -->
