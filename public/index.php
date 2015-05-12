@@ -40,12 +40,14 @@ if($doctor_page){
   // getting a minimun of 3 reviews
   $missing = 3 - $total_reviews;
   if($missing > 0 ) {
+    remove_all_filters('posts_orderby');
     $args['post_per_page'] = $missing;
-      $args['meta_query'] = array(
-      array('key' => 'doctor_page',
-            'value' => $current_doc,
-            'compare' => '!='
-           )
+    $args['orderby'] = 'rand';
+    $args['meta_query'] = array(
+    array('key' => 'doctor_page',
+          'value' => $current_doc,
+          'compare' => '!='
+         )
     );
     $reviews_array2 = get_posts( $args );
     $reviews_array = array_merge($reviews_array, $reviews_array2);
