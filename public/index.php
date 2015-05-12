@@ -25,6 +25,7 @@ if($doctor_page){
   $args['meta_key'] = 'doctor_page';
   $args['meta_value'] = $current_doc;
 }
+print_r($args);
 $reviews_array = get_posts( $args );
 
 $total_reviews = count($reviews_array);
