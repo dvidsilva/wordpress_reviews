@@ -1,4 +1,8 @@
-<?php $args = array(
+<?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+  $args = array(
 	'posts_per_page'   => 40,
 	'offset'           => 0,
 	'category'         => '',
