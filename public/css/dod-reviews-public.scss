@@ -259,6 +259,8 @@ $lightblack: #333;
   }
 }
 .dodrtwocolumsn {
+  position: relative;
+  z-index: 4;
   iframe {
     max-width: 560px;
     margin: 0 auto;
