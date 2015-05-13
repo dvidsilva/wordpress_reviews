@@ -89,11 +89,12 @@ if($doctor_page){
             $doctor_page = get_post_meta($review->ID, 'doctor_page', true);
             $doctor_page = parse_url($doctor_page, PHP_URL_SCHEME) === null ? "http://". $doctor_page : $doctor_page;
             $doctor_name = get_post_meta($review->ID, 'doctor_name', true);        
-            $content  = str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", $c);
+            $content  = $c;//str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", $c);
             if(strlen($c) < 220 ) {
               echo $content;
             } else {
-              $c  = str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", substr(trim($c), 0, 214));
+              //$c  = str_replace($doctor_name, "<a href='".$doctor_page."' >".$doctor_name."</a>", substr(trim($c), 0, 214));
+              $c = substr(trim($c), 0, 214);
               echo '<span class="dodrclippedr">' ;
               echo $c . '&hellip;' . '</span>' ;
               echo '<a class="dodrreadmore">[more]</a>';
