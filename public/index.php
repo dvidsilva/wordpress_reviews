@@ -58,6 +58,7 @@ if($doctor_page){
 <!-- main container -->
 <div id="dodreviews12">
 <!--  <h1>Hear From Our Patients</h1>-->
+ 
   <?php
     if($total_reviews>3){
   ?>
