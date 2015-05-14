@@ -250,7 +250,7 @@
       margin: 0; }
     /* line 275, /Users/dvidsilva/dod/code/wordpress/wp-content/plugins/dodreviews/public/css/dod-reviews-public.scss */
     .dodrtwocolumsn .dodrcol1 {
-      padding-top: 7px;
+      margin-top: 8px;
       box-sizing: border-box;
       width: 50%;
       padding: 0 0 20px 2em;
@@ -322,7 +322,6 @@
     .dodrdoctorheader p a:last-child {
       background: #ff4c76;
       padding-top: 3px;
-      border: 1px solid white;
       border-radius: 3px;
       padding: 8px 10px;
       text-transform: uppercase;
