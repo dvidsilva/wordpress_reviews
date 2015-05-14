@@ -45,8 +45,8 @@ if($doctor_page){
     $args['orderby'] = 'rand';
     $args['meta_query'] = array(
     array('key' => 'doctor_page',
-          'value' => $current_doc,
-          'compare' => '!='
+          'value' => '',
+          'compare' => '='
          )
     );
     $reviews_array2 = get_posts( $args );
