@@ -18,6 +18,7 @@
     $('.dodrdoctorheader').wrap('<div class="dodrheaderprev">');
   });
   <?php
+    echo 'var doctor_type = ' . $doctor_type;
     if($doctor_type==="pediatrician"){
   ?>
     $('.dodrdoctorheader [href*="medical"]').attr('href','http://wwwtest.doctorondemand.com/pediatrics');
