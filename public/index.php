@@ -98,7 +98,7 @@ if($doctor_page){
               echo '<span class="dodrclippedr">' ;
               echo $c . '&hellip;' . '</span>' ;
               echo '<a class="dodrreadmore"';
-              echo 'doctor="'$review->ID.'-'.$review->post_title .'">[more]</a>';
+              echo 'doctor="'.$review->ID.'-'.$review->post_title .'">[more]</a>';
               echo '<span class="dodrfullr">' . $content . '</span>';
             }
           ?>
