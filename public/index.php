@@ -85,6 +85,7 @@ if($doctor_page){
       <div class="dodrtext">
         <p class="dodrreview ">
           <?php 
+    print_r($review);exit;
             $c = strip_tags($review->post_content); 
             $doctor_page = get_post_meta($review->ID, 'doctor_page', true);
             $doctor_page = parse_url($doctor_page, PHP_URL_SCHEME) === null ? "http://". $doctor_page : $doctor_page;
@@ -97,7 +98,8 @@ if($doctor_page){
 //              $c = substr(trim($c), 0, 214);
               echo '<span class="dodrclippedr">' ;
               echo $c . '&hellip;' . '</span>' ;
-              echo '<a class="dodrreadmore">[more]</a>';
+              echo '<a class="dodrreadmore"';
+              echo 'doctor="'$review->ID.'-'.$review->post_title .'">[more]</a>';
               echo '<span class="dodrfullr">' . $content . '</span>';
             }
           ?>

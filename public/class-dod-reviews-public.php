@@ -107,7 +107,7 @@ class DoDReviewsPublic {
          */
         public function display_reviews ($atts) {
           $doctor_page = false;
-          if($atts['name']){
+          if(isset($atts['name'])){
             $current_doc = str_ireplace('wwwtest','www',"$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
             $doctor_page = true;
           }
